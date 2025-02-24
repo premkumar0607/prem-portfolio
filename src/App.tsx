@@ -277,14 +277,17 @@ function App() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-4">
-                    With the increasing number of movies released every year, finding the right movie to watch has become a challenge. I developed a Movie Recommendation System that suggests movies based on their similarity to a given movie using machine learning techniques.
+                  Finding the right movie to watch can be overwhelming due to the vast number of available options. This content-based movie recommendation system suggests movies based on their similarity to a given movie using machine learning techniques. It processes movie data, extracts key features, builds a similarity matrix, and provides real-time recommendations through an interactive Streamlit interface.
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
-                    <li>Implemented Bag of Words model using Scikit-learn's CountVectorizer for feature extraction</li>
-                    <li>Built similarity matrix using cosine similarity for movie comparison</li>
-                    <li>Developed interactive Streamlit interface for real-time recommendations</li>
-                    <li>Published methodology in IEEE conference</li>
+  <li>Processed movie data from TMDB using Pandas for data cleaning and preprocessing.</li>
+  <li>Used Scikit-learn’s CountVectorizer to implement the Bag of Words model for feature extraction.</li>
+  <li>Built a cosine similarity matrix using Scikit-learn to find similar movies.</li>
+  <li>Developed an interactive web interface using Streamlit for real-time recommendations.</li>
+  <li>Utilized Pickle to save and load the trained model for efficient predictions.</li>
+  <li>Published methodology in IEEE conference.</li>
                   </ul>
+
                   <a 
                     href="https://github.com/premkumar0607/MOVIE-RECOMMENDATION-ENGINE"
                     target="_blank"
@@ -311,21 +314,24 @@ function App() {
                 <div className="p-8 md:w-1/2">
                   <h3 className="text-2xl font-bold mb-4 text-indigo-600">Crime Perpetrator Detection System</h3>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {['Python', 'OpenCV', 'Deep Learning', 'deepface', 'retina face', 'streamlit', 'tensorflow'].map((tech) => (
+                    {['Python', 'OpenCV', 'deepface', 'retinaface', 'Streamlit', 'Numpy'].map((tech) => (
                       <span key={tech} className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <p className="text-gray-600 mb-4">
-                    Developed an Intelligent Person Identification & Retrieval System that extracts, recognizes, and retrieves individuals from CCTV footage using computer vision and deep learning techniques.
+                  This AI-powered system automates suspect identification from CCTV footage and images using advanced face recognition techniques. It processes video frames and images to detect and verify faces, comparing them against a query image to find matches. The system uses DeepFace for face verification, RetinaFace for detection, OpenCV for video processing, and Streamlit for the user interface. It enables law enforcement agencies to quickly analyze surveillance data and extract relevant information for investigations.
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
-                    <li>Implemented frame filtering for redundancy removal</li>
-                    <li>Applied deep learning models for face detection and recognition</li>
-                    <li>Created efficient storage system for processed frames</li>
-                    <li>Built real-time identification and retrieval system</li>
+  <li>Captures and processes video frames using OpenCV for face detection and recognition.</li>
+  <li>Extracts key frames from videos and saves them for further analysis and comparison.</li>
+  <li>Uses DeepFace with RetinaFace to detect and verify faces against the query image.</li>
+  <li>Stores detected matches separately in an output directory for easy review.</li>
+  <li>Implements a Streamlit-based frontend for uploading and processing videos and images.</li>
+  <li>Optimizes detection efficiency by adjusting confidence levels and frame extraction rates.</li>
                   </ul>
+
                   <a 
                     href="https://github.com/premkumar0607/"
                     target="_blank"
@@ -359,16 +365,18 @@ function App() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-4">
-                    Developed a real-time hand gesture recognition system that allows players to control games using hand movements, providing a touchless and immersive gaming experience.
+                  This real-time hand gesture recognition system allows users to control key presses using hand gestures. It leverages computer vision and machine learning techniques to track hand movements and map them to keyboard inputs. The system uses MediaPipe for hand tracking, OpenCV for video processing, and CTypes for simulating keyboard inputs.
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
-                    <li>Integrated MediaPipe Hand Tracking for real-time gesture detection</li>
-                    <li>Mapped predefined gestures to keyboard actions using ctypes</li>
-                    <li>Implemented visual feedback system with OpenCV overlays</li>
-                    <li>Optimized for smooth, lag-free gameplay interactions</li>
+  <li>Captured real-time video feed using OpenCV for processing hand gestures.</li>
+  <li>Implemented MediaPipe Hands to detect and track hand landmarks with high accuracy.</li>
+  <li>Extracted key fingertip positions using NumPy to determine gesture patterns.</li>
+  <li>Mapped detected gestures to keyboard inputs using CTypes for real-time control.</li>
+  <li>Optimized performance by adjusting detection and tracking confidence levels.</li>
                   </ul>
+
                   <a 
-                    href="https://github.com/premkumar0607/"
+                    href="https://github.com/premkumar0607/Real-time-Hand-Gesture-Recognition-System"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700"
