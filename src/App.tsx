@@ -286,7 +286,7 @@ function App() {
                     <li>Published methodology in IEEE conference</li>
                   </ul>
                   <a 
-                    href="https://github.com/premkumar0607/movie-recommendation"
+                    href="https://github.com/premkumar0607/MOVIE-RECOMMENDATION-ENGINE"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700"
@@ -327,7 +327,7 @@ function App() {
                     <li>Built real-time identification and retrieval system</li>
                   </ul>
                   <a 
-                    href="https://github.com/premkumar0607/crime-detection"
+                    href="https://github.com/premkumar0607/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700"
@@ -368,7 +368,7 @@ function App() {
                     <li>Optimized for smooth, lag-free gameplay interactions</li>
                   </ul>
                   <a 
-                    href="https://github.com/premkumar0607/hand-gesture"
+                    href="https://github.com/premkumar0607/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700"
