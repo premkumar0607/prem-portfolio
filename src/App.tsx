@@ -33,6 +33,111 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex flex-col font-sans">
+      <style>
+        {`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.2; transform: scale(0.8); }
+          50% { opacity: 0.7; transform: scale(1.2); }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+
+        .animation-delay-1000 {
+          animation-delay: 1s;
+        }
+        
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        
+        .animation-delay-3000 {
+          animation-delay: 3s;
+        }
+        
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        
+        @keyframes animate-blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        
+        .animate-blob {
+          animation: animate-blob 15s infinite alternate;
+        }
+        
+        .animate-pulse {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.6;
+          }
+        }
+
+        @keyframes scrollDown {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(6px);
+          }
+        }
+        
+        .animate-scrollDown {
+          animation: scrollDown 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+          0% {
+            transform: translateY(-10px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out forwards;
+        }
+        `}
+      </style>
+
       {/* Scroll to top button */}
       {showScrollTop && (
         <button 
@@ -57,6 +162,7 @@ function App() {
                 ['About', 'about'],
                 ['Experience', 'experience'],
                 ['Projects', 'projects'],
+                ['Education', 'education'],
               ].map(([label, id]) => (
                 <button
                   key={id}
@@ -96,6 +202,7 @@ function App() {
                   ['About', 'about'],
                   ['Experience', 'experience'],
                   ['Projects', 'projects'],
+                  ['Education', 'education'],
                 ].map(([label, id]) => (
                   <button
                     key={id}
@@ -122,12 +229,40 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <div id="hero" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white pt-24 min-h-screen flex items-center relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 -right-48 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
+      <div id="hero" className="text-white pt-24 min-h-screen flex items-center relative overflow-hidden">
+        {/* Animated wallpaper background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+          {/* Animated stars/particles */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 7%)' }}>
+            {Array.from({ length: 50 }).map((_, i) => (
+              <div 
+                key={i}
+                className="absolute rounded-full bg-white/50"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 4 + 1}px`,
+                  height: `${Math.random() * 4 + 1}px`,
+                  opacity: Math.random() * 0.5 + 0.2,
+                  animation: `twinkle ${Math.random() * 5 + 3}s infinite ease-in-out ${Math.random() * 3}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Animated gradient blobs */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-blob"></div>
+            <div className="absolute top-2/3 -right-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-800/20 rounded-full blur-3xl animate-blob animation-delay-3000"></div>
+          </div>
+          
+          {/* Animated light rays */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-1/4 w-full h-full bg-gradient-to-b from-indigo-400/40 to-transparent transform -rotate-45 animate-pulse animation-delay-1000"></div>
+            <div className="absolute top-0 right-1/3 w-full h-full bg-gradient-to-b from-purple-500/40 to-transparent transform rotate-45 animate-pulse animation-delay-3000"></div>
+          </div>
         </div>
         
         <div className="container mx-auto px-4 py-16 z-10 max-w-7xl">
@@ -155,6 +290,13 @@ function App() {
                 >
                   <Linkedin size={20} />
                   Connect With Me
+                </a>
+                <a 
+                  href="mailto:prem672003@gmail.com" 
+                  className="bg-purple-700/40 backdrop-blur-sm text-white border border-white/20 px-8 py-3 rounded-full font-semibold hover:bg-purple-700/60 transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <Mail size={20} />
+                  Contact Me
                 </a>
               </div>
             </div>
@@ -686,7 +828,7 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section id="education" className="py-24 bg-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-slate-50 to-transparent"></div>
         <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-indigo-100 rounded-full opacity-50"></div>
@@ -707,7 +849,7 @@ function App() {
               <div className="h-24 bg-gradient-to-r from-indigo-600 to-purple-600 relative">
                 <div className="absolute -bottom-12 left-8 w-24 h-24 bg-white p-2 rounded-xl shadow-lg">
                   <div className="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">BTech</span>
+                    <span className="text-white text-2xl font-bold">B.Tech</span>
                   </div>
                 </div>
               </div>
