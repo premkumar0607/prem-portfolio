@@ -354,7 +354,7 @@ function App() {
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin size={18} />
-                      <span>Melpakkam, Avadi, Chennai • Hybrid</span>
+                      <span>Melpakkam, Avadi, Chennai</span>
                     </div>
                   </div>
                 </div>
