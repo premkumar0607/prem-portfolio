@@ -36,13 +36,27 @@ function App() {
       <style>
         {`
         @keyframes twinkle {
-          0%, 100% { opacity: 0.2; transform: scale(0.8); }
-          50% { opacity: 0.7; transform: scale(1.2); }
+          0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+          50% { opacity: 0.7; transform: scale(1.2) rotate(5deg); }
         }
         
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          25% { transform: translateY(-15px) translateX(5px); }
+          50% { transform: translateY(-20px) translateX(0px); }
+          75% { transform: translateY(-15px) translateX(-5px); }
+        }
+
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+          25% { transform: translateY(-10px) translateX(10px) rotate(2deg); }
+          50% { transform: translateY(-15px) translateX(0px) rotate(0deg); }
+          75% { transform: translateY(-10px) translateX(-10px) rotate(-2deg); }
+        }
+
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.5); }
+          50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(168, 85, 247, 0.6); }
         }
 
         .animation-delay-1000 {
@@ -63,21 +77,33 @@ function App() {
         
         @keyframes animate-blob {
           0% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
           }
           33% {
-            transform: translate(30px, -50px) scale(1.1);
+            transform: translate(30px, -50px) scale(1.1) rotate(5deg);
           }
           66% {
-            transform: translate(-20px, 20px) scale(0.9);
+            transform: translate(-20px, 20px) scale(0.9) rotate(-5deg);
           }
           100% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
           }
         }
         
         .animate-blob {
           animation: animate-blob 15s infinite alternate;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+          animation: glow 3s ease-in-out infinite;
         }
         
         .animate-pulse {
@@ -87,18 +113,22 @@ function App() {
         @keyframes pulse {
           0%, 100% {
             opacity: 0.3;
+            transform: scale(1);
           }
           50% {
             opacity: 0.6;
+            transform: scale(1.05);
           }
         }
 
         @keyframes scrollDown {
           0%, 100% {
             transform: translateY(0);
+            opacity: 0.7;
           }
           50% {
             transform: translateY(6px);
+            opacity: 1;
           }
         }
         
@@ -135,6 +165,50 @@ function App() {
         .animate-slideDown {
           animation: slideDown 0.3s ease-out forwards;
         }
+        
+        @keyframes rotate3d {
+          0%, 100% { transform: rotate3d(1, 1, 1, 0deg); }
+          50% { transform: rotate3d(1, 1, 1, 10deg); }
+        }
+        
+        .animate-rotate3d {
+          animation: rotate3d 8s ease-in-out infinite;
+          transform-style: preserve-3d;
+        }
+        
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+        
+        .animate-shimmer {
+          background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+          background-size: 200% 100%;
+          animation: shimmer 3s infinite;
+        }
+        
+        @keyframes wave {
+          0%, 100% { transform: translateY(0) scaleY(1); }
+          50% { transform: translateY(-5px) scaleY(0.95); }
+        }
+        
+        .animate-wave {
+          animation: wave 5s ease-in-out infinite;
+        }
+        
+        @keyframes bounce-subtle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        
+        .animate-bounce-subtle {
+          animation: bounce-subtle 2s ease-in-out infinite;
+        }
+
         `}
       </style>
 
@@ -290,13 +364,6 @@ function App() {
                 >
                   <Linkedin size={20} />
                   Connect With Me
-                </a>
-                <a 
-                  href="mailto:prem672003@gmail.com" 
-                  className="bg-purple-700/40 backdrop-blur-sm text-white border border-white/20 px-8 py-3 rounded-full font-semibold hover:bg-purple-700/60 transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                >
-                  <Mail size={20} />
-                  Contact Me
                 </a>
               </div>
             </div>
