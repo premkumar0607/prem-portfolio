@@ -352,8 +352,8 @@ function App() {
               <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-indigo-200">
                 AI & ML Enthusiast
               </h2>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl mb-4 text-lg leading-relaxed shadow-xl border border-white/20 md:max-w-lg">
-                Passionate about transforming raw data into powerful insights. Proficient in Python, data analytics, and AI model development, I excel at building machine learning models.
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl mb-4 text-lg leading-relaxed shadow-xl border border-white/20 md:max-w-3xl">
+              Passionate about transforming raw data into powerful insights. Skilled in Python programming with a strong foundation in data analytics, machine learning, deep learning, and data science. Proficient in building and deploying AI models using Python libraries such as NumPy, Pandas, Matplotlib, Seaborn, and Scikit-learn. Good at coding, problem-solving, and continuously exploring new technologies in the fields of Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL).
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-6 md:mb-0">
                 <a 
@@ -407,13 +407,16 @@ function App() {
             </h2>
           </div>
           
-          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-xl border border-indigo-100 mb-16 transform hover:scale-[1.01] transition-all duration-300">
-            <div className="max-w-3xl mx-auto space-y-4">
+          <div className="bg-gradient-to-br from-indigo-50/90 to-purple-50/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/50 mb-16 transform hover:scale-[1.01] transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/30 backdrop-blur-sm -z-10"></div>
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-300/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-300/20 rounded-full blur-3xl"></div>
+            <div className="max-w-3xl mx-auto space-y-4 relative z-10">
               <p className="text-gray-700 text-lg leading-relaxed">
-                Passionate about Data Science, I am actively improving my analytical and coding skills through continuous learning and hands-on projects. Proficient in Python, data analytics, and AI model development, I explore innovative solutions using data-driven approaches.
+              Passionate about Data Science, I am committed to transforming complex data into meaningful insights through analytical thinking and technical expertise. With a strong foundation in Python programming, data analytics, and AI model development, I continuously enhance my skills by working on real-world projects and exploring data-driven problem-solving techniques. My proficiency extends to key Python libraries such as NumPy, Pandas, Matplotlib, Seaborn, and Scikit-learn, enabling me to build and evaluate machine learning models effectively.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Currently focused on Data Science, Machine Learning, and LLM applications, I seek opportunities to apply my skills, collaborate, and grow professionally.
+              Currently, I am focused on advancing my knowledge in Data Science, Machine Learning, and Large Language Model (LLM) applications. I enjoy experimenting with AI-based solutions and staying up-to-date with the latest advancements in the field. I am eager to contribute to impactful projects, collaborate with like-minded professionals, and grow within dynamic, innovation-driven environments.
               </p>
             </div>
           </div>
@@ -424,12 +427,13 @@ function App() {
             {['Data Science', 'Machine Learning', 'Python', 'Data Analysis', 'Artificial Intelligence'].map((skill, index) => (
               <div 
                 key={skill} 
-                className={`bg-gradient-to-br p-6 rounded-xl shadow-md text-center border transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-center ${
+                className={`bg-gradient-to-br p-6 rounded-xl shadow-md text-center border transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300 flex items-center justify-center group relative overflow-hidden ${
                   index % 2 === 0 
-                    ? 'from-indigo-50 to-indigo-100 border-indigo-200 hover:bg-indigo-100' 
-                    : 'from-purple-50 to-purple-100 border-purple-200 hover:bg-purple-100'
+                    ? 'from-indigo-50 to-indigo-100 border-indigo-200 hover:from-indigo-100 hover:to-indigo-200' 
+                    : 'from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'
                 }`}
               >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/30 to-white/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                 <p className={`font-semibold text-base md:text-lg ${index % 2 === 0 ? 'text-indigo-700' : 'text-purple-700'}`}>{skill}</p>
               </div>
             ))}
@@ -463,7 +467,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-indigo-600">Languages</h3>
               <ul className="space-y-3 text-gray-600">
-                {['Python', 'Java'].map(skill => (
+                {['Python', 'Java', 'HTML', 'CSS'].map(skill => (
                   <li key={skill} className="flex items-center gap-2">
                     <span className="h-2 w-2 bg-indigo-600 rounded-full"></span>
                     <span>{skill}</span>
@@ -481,7 +485,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-purple-600">Libraries/Frameworks</h3>
               <ul className="space-y-3 text-gray-600">
-                {['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Streamlit', 'tkinter'].map(skill => (
+                {['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Streamlit', 'Flask', 'tkinter'].map(skill => (
                   <li key={skill} className="flex items-center gap-2">
                     <span className="h-2 w-2 bg-purple-600 rounded-full"></span>
                     <span>{skill}</span>
@@ -571,17 +575,21 @@ function App() {
                 <div className="md:w-2/3">
                   <h4 className="font-bold text-lg mb-4 text-indigo-700">Energy Consumption Dashboard Project</h4>
                   <ul className="space-y-4 text-gray-700">
-                    <li className="flex gap-3 items-start">
+                  <li className="flex gap-3 items-start">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs mt-0.5">1</span>
-                      <span>Developed a real-time energy consumption dashboard that enables efficient monitoring and analysis of usage patterns.</span>
+                      <span>Developed real-time dashboards to monitor energy consumption using interactive charts and graphs.</span>
                     </li>
                     <li className="flex gap-3 items-start">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs mt-0.5">2</span>
-                      <span>Implemented responsive design principles ensuring optimal user experience across all devices.</span>
+                      <span>Integrated API data from multiple devices to fetch and display live energy usage.</span>
                     </li>
                     <li className="flex gap-3 items-start">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs mt-0.5">3</span>
-                      <span>Enhanced user engagement through interactive elements and dynamic data visualization.</span>
+                      <span>Added filters for custom date ranges and device selection to improve data analysis flexibility.</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs mt-0.5">4</span>
+                      <span>Improved user interface with responsive design, modals, and loading animations for better user experience.</span>
                     </li>
                   </ul>
                 </div>
@@ -934,7 +942,7 @@ function App() {
                   </div>
                 </div>
                 <div className="bg-white/70 backdrop-blur-sm p-4 rounded-xl shadow-inner">
-                  <p className="text-gray-700 font-medium">CGPA: <span className="text-indigo-600 font-bold">8.71</span> (till 7th sem)</p>
+                  <p className="text-gray-700 font-medium">CGPA: <span className="text-indigo-600 font-bold">8.74</span></p>
                 </div>
               </div>
             </div>
